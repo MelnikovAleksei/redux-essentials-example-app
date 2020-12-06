@@ -33,6 +33,9 @@ export const SinglePostPage = ({ match }) => {
                 <Link to="/">
                     To Posts
                 </Link>
+                <Link to={`/editPost/${post.id}`}>
+                    Edit Post
+                </Link>
             </article>
         </section>
     )
