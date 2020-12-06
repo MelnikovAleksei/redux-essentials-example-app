@@ -15,7 +15,7 @@ export const EditPostPage = ({ match }) => {
     const [content, setContent] = useState(post.content);
 
     const dispatch = useDispatch();
-    const history = useHpostistory();
+    const history = useHistory();
 
     const handleChangeTitle = (evt) => {
         setTitle(evt.target.value);
