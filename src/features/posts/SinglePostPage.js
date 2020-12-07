@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { PostAuthor } from './PostAuthor';
+import { ReactionButtons } from './ReactionButtons';
 
 export const SinglePostPage = ({ match }) => {
     const { postId } = match.params;
@@ -35,6 +36,9 @@ export const SinglePostPage = ({ match }) => {
                 >
                     {post.content}
                 </p>
+                <ReactionButtons
+                    post={post}
+                />
                 <Link to="/">
                     To Posts
                 </Link>

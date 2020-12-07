@@ -7,6 +7,8 @@ import { PostAuthor } from './PostAuthor';
 
 import { TimeAgo } from './TimeAgo';
 
+import { ReactionButtons } from './ReactionButtons';
+
 export const PostsList = () => {
   const posts = useSelector((state) => state.posts)
   const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date))
@@ -19,6 +21,9 @@ export const PostsList = () => {
         <TimeAgo timestamp={post.date}/>
       </h3>
       <p className="post-content">{post.content.substring(0, 100)}</p>
+      <ReactionButtons 
+        post={post}
+      />
       <Link to={`/posts/${post.id}`} className="button muted-button">
         View Post 
       </Link>
